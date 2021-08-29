@@ -37,7 +37,10 @@ function printPersonDetails(personDetails = { name: '' }) {
 ## If function has more than 2 parameters, ask developers to use named parameter
 - Named parameter helps developer not remember the order of parameters to be provided.
 - They need to just pass the parameters in an object without need of remembering the order.
-- They just need to remember the name of parameter which can be standardized
+- They just need to remember the name of parameter which can be standardized by documentation
+    - for e.g. what kind of parameter are you expecting
+    - if it's id, parameter name should always be id
+    - if it's name, parameter name should always be name
 
 ### Before
 ```
@@ -55,6 +58,7 @@ function printPersonDetails(name, age, gender) {
     console.log(name, age, gender);
 }
 
+// No need to remember the sequence
 printPersonDetails({
     age: 31,
     gender: 'male',
