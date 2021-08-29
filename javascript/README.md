@@ -123,4 +123,5 @@ const ajaxWithOverrides = ajaxOptions({
     - arr.includes()
 - These methods help us determine if the element is present or not
 - includes returns true or false value instead of -1
+- includes is more ergonomic and semantic
 
