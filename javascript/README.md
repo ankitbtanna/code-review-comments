@@ -114,3 +114,13 @@ const ajaxWithOverrides = ajaxOptions({
     ]
 })
 ```
+
+## Stop using arr.indexOf() functions for verifying if the item is present or now. Use arr.find() or arr.findIndex() or arr.includes()
+- arr.indexOf() returns -1 value if item is not found
+- JavaScript has better options like
+    - arr.find()
+    - arr.findIndex()
+    - arr.includes()
+- These methods help us determine if the element is present or not
+- includes returns true or false value instead of -1
+
