@@ -71,3 +71,46 @@ printPersonDetails({
     gender: 'male'
 });
 ```
+
+## Use de-structuring and re-structuring for functions which take objects as in input and returning manipulated object
+### Example
+```
+function ajaxOptions({
+    url = "http://some.base.url/api",
+    method = "post",
+    data,
+    callback,
+    headers: [
+        headers0 = "Content-Type": "text/plain",
+        ...otherHeaders
+    ] = []
+} = {}) {
+    return {
+        url,
+        method,
+        data,
+        callback,
+        headers: [
+            headers0,
+            ...otherHeaders
+        ]
+    }
+}
+
+const ajaxWithDefault = ajaxOptions();
+/* returns {
+    url: 'http://some.base.url/api',
+    method: 'post',
+    headers: [
+        "Content-Type": "text/plain"
+    ]
+} */
+
+const ajaxWithOverrides = ajaxOptions({
+    url: 'http://some.base.url/new',
+    method: 'get',
+    headers: [
+        'Authorization': 'Bearer Token'
+    ]
+})
+```
