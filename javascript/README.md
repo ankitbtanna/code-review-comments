@@ -1,6 +1,30 @@
 # JavaScript
 Code review comments for JavaScript Code
 
+## Use nullish coallescing operator for assigning default values to the null/undefined values
+- The logical nullish assignment (x ??= y) operator only assigns if x is nullish (null or undefined).
+- The nullish coalescing operator (??) is a logical operator that returns its right-hand side operand when its left-hand side operand is null or undefined, and otherwise returns its left-hand side operand.
+
+```
+const a = { duration: 50 };
+
+a.duration ??= 10;
+console.log(a.duration);
+// expected output: 50
+
+a.speed ??= 25;
+console.log(a.speed);
+// expected output: 25
+
+const foo = undefined ?? 'default string';
+console.log(foo);
+// expected output: "default string"
+
+const baz = 0 ?? 42;
+console.log(baz);
+// expected output: 0
+```
+
 ## Avoid using else keyword in if-else conditions
 - Contributes to Readability and maintainability
 - Else causes nesting 
