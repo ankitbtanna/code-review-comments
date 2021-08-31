@@ -22,7 +22,15 @@ console.log(foo);
 
 const baz = 0 ?? 42;
 console.log(baz);
-// expected output: 0
+// expected output: 0let foo = { someFooProp: "hi" };
+
+console.log(foo.someFooProp?.toUpperCase() ?? "not available"); // "HI"
+console.log(foo.someBarProp?.toUpperCase() ?? "not available"); // "not available"
+
+
+let foo = { someFooProp: "hi" };
+console.log(foo.someFooProp?.toUpperCase() ?? "not available"); // "HI"
+console.log(foo.someBarProp?.toUpperCase() ?? "not available"); // "not available"
 ```
 
 ## Avoid using else keyword in if-else conditions
