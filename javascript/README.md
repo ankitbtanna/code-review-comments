@@ -1,6 +1,61 @@
 # JavaScript
 Code review comments for JavaScript Code
 
+## Avoid using else keyword in if-else conditions
+- Contributes to Readability and maintainability
+- Else causes nesting 
+- Use Guard clause methodology where we write negative scenarios first
+- A function can have multiple-return statements. Multi-exit points
+- Break the complexity into smaller functions
+
+### Before
+```
+function canDrink(person) {
+    if (person?.age !== null) {
+        if (person.age < 18) {
+            console.log('Nope!');
+            return;
+        } else if (person.age < 21) {
+            console.log('Not in US');
+            return;
+        } else {
+            console.log('Yes!');
+            return;
+        }
+    } else {
+        console.log('You are not a person.');
+        return;
+    }
+}
+
+canDrink({ age: 22 });
+```
+
+### After
+```
+function canDrink(person) {
+    if (person?.age === null) {
+        console.log("You are not a person.");
+        return;
+    }
+  
+    if (person.age < 18) {
+        console.log("Nope!");
+        return;
+    }
+    
+    if (person.age < 21) {
+        console.log("Not in US");
+        return;
+    }
+    
+    console.log("Yes!");
+    return;
+}
+
+canDrink({ age: 22 });
+```
+
 ## Function must be pure
 A pure function does not interact with or modify the outside world. It solely depends on the input parameters for the computation.
 
