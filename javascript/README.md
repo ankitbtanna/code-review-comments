@@ -1,6 +1,24 @@
 # JavaScript
 Code review comments for JavaScript Code
 
+## Function must be pure
+A pure function does not interact with or modify the outside world. It solely depends on the input parameters for the computation.
+
+### Example of impure function
+```
+var productPrice = 30;
+function calculateGST() {
+    productPrice = productPrice + 5;
+    return productPrice * 0.05;
+}
+```
+### Example of pure function
+```
+function calculateGST( productPrice ) {
+    return productPrice * 0.05;
+}
+```
+
 ## Function name must begin with a verb/action
 - print, load, delete, add, set, get
 
